@@ -129,6 +129,11 @@ Learn how to installk artifactory [here](https://jfrog.com/open-source/)
 }
 ```
 
+### second setup for Jenkinsfile
+================================
+
+
+
 #### sonar properties
 ===================================
 sonar.host.url=http://3.125.17.131:9000/sonar/
