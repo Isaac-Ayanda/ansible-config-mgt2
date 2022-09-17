@@ -15,7 +15,7 @@ pipeline {
         }
     stage('Checkout SCM') {
        steps {
-            git branch: 'main', url: 'https://github.com/Isaac-Ayanda/ansible-config-mgt2.git'
+            git branch: 'feature/jenkinspipeline-stages', url: 'https://github.com/Isaac-Ayanda/ansible-config-mgt2.git'
          }
        }
     stage('Prepare Ansible For Execution') {
