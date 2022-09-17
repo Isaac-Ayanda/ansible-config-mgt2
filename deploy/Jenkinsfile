@@ -5,11 +5,14 @@ pipeline {
   environment {
       ANSIBLE_CONFIG="${WORKSPACE}/deploy/ansible.cfg"
     }
+<<<<<<< HEAD
 
   parameters {
       string(name: 'inventory', defaultValue: 'dev',  description: 'This is the inventory file for the environment to deploy configuration')
     }
 
+=======
+>>>>>>> main
   stages {
     stage("Initial cleanup") {
        steps {
@@ -20,7 +23,11 @@ pipeline {
         }
     stage('Checkout SCM') {
        steps {
+<<<<<<< HEAD
             git branch: 'feature/jenkinspipeline-stages', url: 'https://github.com/Isaac-Ayanda/ansible-config-mgt2.git'
+=======
+            git branch: 'main', url: 'https://github.com/Isaac-Ayanda/ansible-config-mgt2.git'
+>>>>>>> main
          }
        }
     stage('Prepare Ansible For Execution') {
@@ -31,7 +38,11 @@ pipeline {
        }
     stage('Run Ansible playbook') {
        steps {
+<<<<<<< HEAD
         ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/${inventory}', playbook: 'playbooks/site.yml'
+=======
+        ansiblePlaybook become: true, colorized: true, credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory/dev', playbook: 'playbooks/site.yml'
+>>>>>>> main
          }
        }
     stage('Clean Workspace after build'){
@@ -40,4 +51,8 @@ pipeline {
          }
        }
   }   
+<<<<<<< HEAD
  }
+=======
+ }
+>>>>>>> main
